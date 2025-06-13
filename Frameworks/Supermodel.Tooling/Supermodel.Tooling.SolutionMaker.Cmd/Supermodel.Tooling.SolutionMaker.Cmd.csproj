@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+	  
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SupermodelSolutionTemplate.XXYXX.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SupermodelSolutionTemplate.XXYXX.zip">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Supermodel.ReflectionMapper\Supermodel.ReflectionMapper.csproj" />
+    <ProjectReference Include="..\Supermodel.Tooling.SolutionMaker\Supermodel.Tooling.SolutionMaker.csproj" />
+  </ItemGroup>
+
+</Project>

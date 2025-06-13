@@ -1,0 +1,2 @@
+﻿Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelGeneratorMVC", "XXYXX\Util\ModelGeneratorMVC\ModelGeneratorMVC.csproj", "{7234523C-4609-4197-9DA5-3DC77A172D5B}"
+EndProject

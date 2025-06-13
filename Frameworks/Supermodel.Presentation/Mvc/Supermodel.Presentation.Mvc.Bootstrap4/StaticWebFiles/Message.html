@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <title>[%MessageSnippet%]</title>
+    [%HeaderSnippet%]
+</head>
+<body>
+    [%BodySnippet%]
+    <script>
+        $(function () 
+        {
+            bootbox.dialog(
+            {
+                message: '<br/><p>[%MessageSnippet%]<p>',
+                size: 'large',
+                centerVertical: true,
+                closeButton: false,
+                buttons: 
+                {
+                    ok: 
+                    {
+                        label: "Go to Home Page",
+                        className: 'btn-info',
+                        callback: function() { window.location.href='[%HomePageSnippet%]'; }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

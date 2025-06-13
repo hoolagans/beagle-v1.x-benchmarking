@@ -1,0 +1,16 @@
+﻿Must install driver from https://www.nvidia.com/download/find.aspx
+To use LibDevice must install CUDA Toolkit https://developer.nvidia.com/cuda-downloads and
+
+make sure CUDA_PATH and CUDA_HOME environmental variable exists and points to
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.2 (change version)
+
+Troubleshooting: After context is created, verify that context properties LibDevicePath and LibNvvmPath
+are resolved correctly and are pointing to actual files
+
+Additional info here //https://github.com/m4rs-mt/ILGPU/pull/707
+
+WHEN SETUP IS COMPLETE:
+- Create your own MLSetup (see examples in MLSetups directory of the Run project)
+- Refernce your MLSteup class in Program.cs of the Run project (lot's of examples there)
+- Execute Run project in Release mode
+- Sit back, relax and watch Beagle do its thing... :)

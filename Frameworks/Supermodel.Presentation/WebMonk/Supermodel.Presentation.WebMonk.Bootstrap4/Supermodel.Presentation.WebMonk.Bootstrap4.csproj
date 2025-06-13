@@ -1,0 +1,84 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+	  
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="wwwroot\bootstrap.bundle.min.js" />
+    <None Remove="wwwroot\bootstrap.min.css" />
+    <None Remove="wwwroot\css\super.bs4.css" />
+    <None Remove="wwwroot\jquery-3.6.0.min.js" />
+    <None Remove="wwwroot\jquery-ui.min.css" />
+    <None Remove="wwwroot\jquery-ui.min.js" />
+    <None Remove="wwwroot\js\bootbox.all.min.js" />
+    <None Remove="wwwroot\js\super.bs4.js" />
+    <None Remove="wwwroot\open-iconic-bootstrap.min.css" />
+    <None Remove="wwwroot\open_iconic\font\css\open-iconic-bootstrap.min.css" />
+    <None Remove="wwwroot\open_iconic\font\fonts\open-iconic.eot" />
+    <None Remove="wwwroot\open_iconic\font\fonts\open-iconic.otf" />
+    <None Remove="wwwroot\open_iconic\font\fonts\open-iconic.svg" />
+    <None Remove="wwwroot\open_iconic\font\fonts\open-iconic.ttf" />
+    <None Remove="wwwroot\open_iconic\font\fonts\open-iconic.woff" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\css\super.bs4.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\js\bootbox.all.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\js\super.bs4.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\js\bootstrap.bundle.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\css\bootstrap.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\js\jquery-3.6.0.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\css\jquery-ui.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\js\jquery-ui.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\open_iconic\font\css\open-iconic-bootstrap.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\open_iconic\font\fonts\open-iconic.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\open_iconic\font\fonts\open-iconic.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\open_iconic\font\fonts\open-iconic.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\open_iconic\font\fonts\open-iconic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\open_iconic\font\fonts\open-iconic.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Supermodel.ReflectionMapper\Supermodel.ReflectionMapper.csproj" />
+    <ProjectReference Include="..\Supermodel.Presentation.WebMonk\Supermodel.Presentation.WebMonk.csproj" />
+  </ItemGroup>
+
+</Project>

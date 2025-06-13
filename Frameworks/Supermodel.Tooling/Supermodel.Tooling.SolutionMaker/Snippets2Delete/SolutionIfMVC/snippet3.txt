@@ -1,0 +1,2 @@
+﻿Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BatchApiClientWM", "XXYXX\Server\BatchApiClientWM\BatchApiClientWM.csproj", "{17CBF940-4D77-4528-86E1-3BB1E7C5EDFF}"
+EndProject

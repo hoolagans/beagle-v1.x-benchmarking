@@ -1,0 +1,14 @@
+﻿    //Sqlite db
+    public class DataContext : EFCoreSQLiteDataContext
+    {
+        #region Constructors
+        public DataContext() : base($"Filename={DbFilePath}XXYXX.SQLite.db", new CustomRepoFactory()) { }
+        #endregion
+
+        #region Overrides
+        public override Task SeedDataAsync()
+        {
+            return DataSeeder.SeedDataAsync();
+        }
+        #endregion
+    }

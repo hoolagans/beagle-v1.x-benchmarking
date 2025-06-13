@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+	  
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Supermodel.Encryptor\Supermodel.Encryptor.csproj" />
+    <ProjectReference Include="..\..\..\Supermodel.Persistence\Supermodel.Persistence\Supermodel.Persistence.csproj" />
+    <ProjectReference Include="..\..\..\WebMonk\WebMonk\WebMonk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

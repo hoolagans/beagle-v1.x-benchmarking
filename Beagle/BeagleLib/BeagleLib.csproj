@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<!--<ServerGarbageCollection>false</ServerGarbageCollection>-->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ILGPU" Version="1.5.1" />
+		<PackageReference Include="ILGPU.Algorithms" Version="1.5.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Frameworks\WebMonk\WebMonk\WebMonk.csproj" />
+	</ItemGroup>
+
+</Project>
