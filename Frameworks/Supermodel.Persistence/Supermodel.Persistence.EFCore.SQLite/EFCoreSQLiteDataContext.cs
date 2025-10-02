@@ -28,8 +28,8 @@ public abstract class EFCoreSQLiteDataContext : EFCoreDataContext
             //this is to make Cmd project point to the same db as web projects
             var workingPath = Directory.GetCurrentDirectory();
             string relativePath;
-            if (workingPath.Contains("\\bin\\Debug\\")) relativePath = "../../../../";
-            else if (workingPath.Contains("\\bin\\Release\\")) relativePath = "../../../../";
+            //if (workingPath.Contains("\\bin\\Debug\\")) relativePath = "../../../../";
+            //else if (workingPath.Contains("\\bin\\Release\\")) relativePath = "../../../../";
             //else relativePath = "../";
             relativePath = "";
             //_dbFilePath = appSpecificPath;

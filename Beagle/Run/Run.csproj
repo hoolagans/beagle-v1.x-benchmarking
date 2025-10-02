@@ -15,6 +15,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Frameworks\CsvMaker\CsvMaker.csproj" />
 	  <ProjectReference Include="..\BeagleLib\BeagleLib.csproj" />
+	  <ProjectReference Include="..\Utils\GenerateCsv\GenerateCsv.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -8,9 +8,3 @@ Troubleshooting: After context is created, verify that context properties LibDev
 are resolved correctly and are pointing to actual files
 
 Additional info here //https://github.com/m4rs-mt/ILGPU/pull/707
-
-WHEN SETUP IS COMPLETE:
-- Create your own MLSetup (see examples in MLSetups directory of the Run project)
-- Refernce your MLSteup class in Program.cs of the Run project (lot's of examples there)
-- Execute Run project in Release mode
-- Sit back, relax and watch Beagle do its thing... :)

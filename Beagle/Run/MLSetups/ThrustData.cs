@@ -8,7 +8,7 @@ public class ThrustData : MLSetup
     #region Overrides
     public override string[] GetInputLabels()
     {
-        return ["M", "h"];
+        return ["h", "M"];
     }
     public override (float[], float) GetNextInputsAndCorrectOutput(float[] inputsToFill)
     {
