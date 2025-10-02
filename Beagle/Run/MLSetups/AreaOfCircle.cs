@@ -19,6 +19,7 @@ public class AreaOfCircle : MLSetup
 
     public override int TargetColonySize(int generation)
     {
+        // ReSharper disable once DuplicatedStatements
         if (generation == 0) return 1_000_000;
 
         return 1_000_000;

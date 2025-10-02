@@ -687,6 +687,7 @@ public static class RMExtensions
         var passiveElementType = passiveType.GetElementType();
 
         //if element types match, we are good already
+        // ReSharper disable once DuplicatedStatements
         if (activeElementType == passiveElementType) return true;
 
         return true;

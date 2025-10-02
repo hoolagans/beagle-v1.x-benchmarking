@@ -7,7 +7,7 @@ namespace ExecuteGenome
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             JsonConvert.DefaultSettings = () =>
             {
