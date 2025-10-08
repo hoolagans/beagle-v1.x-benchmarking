@@ -47,7 +47,7 @@ public class DemoForMSU3 : MLSetup
         return 1_000_000;
     }
 
-    protected override int ScriptLengthTaxRateInternal => BConfig.MaxScore * (int)ExperimentsPerGeneration / 250;
+    protected override int ScriptLengthTaxRateInternal => BConfig.MaxScore * (int)ExperimentsPerGeneration / 300;
 
     public override long TotalBirthsToResetColonyIfNoProgress => 2_500_000_000;
 
