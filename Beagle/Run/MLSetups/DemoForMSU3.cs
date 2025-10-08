@@ -20,16 +20,20 @@ public class DemoForMSU3 : MLSetup
         var z2 = 1 + Rnd.Random.NextSingle();
 
         inputs[0] = g;
-        inputs[0] = m1;
-        inputs[0] = m2;
-        inputs[0] = x1;
-        inputs[0] = x2;
-        inputs[0] = y1;
-        inputs[0] = y2;
-        inputs[0] = z1;
-        inputs[0] = z2;
+        inputs[1] = m1;
+        inputs[2] = m2;
+        inputs[3] = x1;
+        inputs[4] = x2;
+        inputs[5] = y1;
+        inputs[6] = y2;
+        inputs[7] = z1;
+        inputs[8] = z2;
 
-        var result = (g * m1 * m2)/((x2 - x1)*(x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
+        var dx = x2 - x1;
+        var dy = y2 - y1;
+        var dz = z2 - z1;
+
+        var result = (g * m1 * m2)/(dx*dx + dy*dy + dz*dz);
         return (inputs, result);
     }
     public override string[] GetInputLabels()
