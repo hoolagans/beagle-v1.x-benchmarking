@@ -1,5 +1,6 @@
 ﻿using BeagleLib.Engine;
 using BeagleLib.Util;
+using BeagleLib.VM;
 
 namespace Run.MLSetups;
 
@@ -26,7 +27,7 @@ public class DemoForMSU2 : MLSetup
 
     public override int TargetColonySize(int generation)
     {
-        if (generation % 1000 == 0) return 15_000_000;
+        if (generation % 1000 < 25) return 15_000_000;
         return 1_000_000;
     }
 
@@ -36,5 +37,10 @@ public class DemoForMSU2 : MLSetup
 
     public override double SolutionFoundASRThreshold => 1.0;
     public override bool KeepOptimizingAfterSolutionFound => true;
+
+    //public override OpEnum[] GetAllowedOperations() => base.GetAllowedOperations().Where(x => x != OpEnum.Sin && 
+    //                                                                                          x != OpEnum.Cbrt &&
+    //                                                                                          x != OpEnum.Cube &&
+    //                                                                                          x != OpEnum.Ln).ToArray();
     #endregion
 }
