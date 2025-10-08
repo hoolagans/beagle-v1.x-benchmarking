@@ -1,0 +1,60 @@
+﻿using BeagleLib.Engine;
+using BeagleLib.Util;
+using BeagleLib.VM;
+
+namespace Run.MLSetups;
+
+public class DemoForMSU3 : MLSetup
+{
+    #region Overrides
+    public override (float[], float) GetNextInputsAndCorrectOutput(float[] inputs)
+    {
+        var g = 1 + Rnd.Random.NextSingle();
+        var m1 = 1 + Rnd.Random.NextSingle();
+        var m2 = 1 + Rnd.Random.NextSingle();
+        var x1 = 3 + Rnd.Random.NextSingle();
+        var x2 = 1 + Rnd.Random.NextSingle();
+        var y1 = 3 + Rnd.Random.NextSingle();
+        var y2 = 1 + Rnd.Random.NextSingle();
+        var z1 = 3 + Rnd.Random.NextSingle();
+        var z2 = 1 + Rnd.Random.NextSingle();
+
+        inputs[0] = g;
+        inputs[0] = m1;
+        inputs[0] = m2;
+        inputs[0] = x1;
+        inputs[0] = x2;
+        inputs[0] = y1;
+        inputs[0] = y2;
+        inputs[0] = z1;
+        inputs[0] = z2;
+
+        var result = (g * m1 * m2)/((x2 - x1)*(x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
+        return (inputs, result);
+    }
+    public override string[] GetInputLabels()
+    {
+        return ["G", "m1", "m2", "x1", "x2", "y1", "y2", "z1", "z2"];
+    }
+
+    public override int TargetColonySize(int generation)
+    {
+        if (generation % 1000 < 25) return 20_000_000;
+        return 1_000_000;
+    }
+
+    public override long TotalBirthsToResetColonyIfNoProgress => 500_000_000;
+
+    public override uint ExperimentsPerGeneration => 1024;
+
+    public override double SolutionFoundASRThreshold => 1.0;
+    public override bool KeepOptimizingAfterSolutionFound => true;
+
+    public override OpEnum[] GetAllowedOperations() => base.GetAllowedOperations().Where(x => x != OpEnum.Sin &&
+        x != OpEnum.Sqrt &&
+        x != OpEnum.Cbrt &&
+        x != OpEnum.Cube &&
+        x != OpEnum.Ln).ToArray();
+    #endregion
+
+}
