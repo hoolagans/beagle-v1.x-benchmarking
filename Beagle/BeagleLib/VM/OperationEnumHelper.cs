@@ -30,6 +30,8 @@ public static class OperationEnumHelper
             case OpEnum.Cube: return new OpProps(CommandTypeEnum.CommandOnly, 0, 1);
             case OpEnum.Ln: return new OpProps(CommandTypeEnum.CommandOnly, 0, 1);
             case OpEnum.Sin: return new OpProps(CommandTypeEnum.CommandOnly, 0, 1);
+            case OpEnum.Pow: return new OpProps(CommandTypeEnum.CommandOnly, -1, 2);
+
             //case OpEnum.Abs: return new OpProps(CommandTypeEnum.CommandOnly, 0, 1);
             //case OpEnum.Round: return new OpProps(CommandTypeEnum.CommandOnly, 0, 1);
 

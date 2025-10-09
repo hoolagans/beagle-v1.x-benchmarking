@@ -65,8 +65,9 @@ public class Program
 
         //using var mlEngine = new MLEngine<DemoForMSU, StdFitFunc>(forceCPUAccelerator: false);
         //using var mlEngine = new MLEngine<DemoForMSU2, StdHyperFitFunc>(forceCPUAccelerator: false);
-        using var mlEngine = new MLEngine<DemoForMSU3, StdFitFunc>(forceCPUAccelerator: false);
+        //using var mlEngine = new MLEngine<DemoForMSU3, StdFitFunc>(forceCPUAccelerator: false);
         //using var mlEngine = new MLEngine<AreaOfCircle, StdFitFunc>(forceCPUAccelerator: false);
+        using var mlEngine = new MLEngine<XPowY, StdFitFunc>(forceCPUAccelerator: false);
         //using var mlEngine = new MLEngine<AvgOf2, StdFitFunc>(forceCPUAccelerator: false);
         //using var mlEngine = new MLEngine<QuadraticEqNormalized, StdFitFunc>(forceCPUAccelerator: false);
         //using var mlEngine = new MLEngine<QuadraticEq, StdFitFunc>(forceCPUAccelerator: false);

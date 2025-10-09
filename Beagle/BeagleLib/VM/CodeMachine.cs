@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using BeagleLib.MathStackLib;
 using BeagleLib.Util;
 using ILGPU;
 using ILGPU.Algorithms;
@@ -77,6 +78,9 @@ public struct CodeMachine
 
             case (OpEnum.Sin, false): ExecuteSin(); return;
             case (OpEnum.Sin, true): ExecuteSinWithLibDevice(); return;
+
+            case (OpEnum.Pow, false): ExecutePow(); return;
+            case (OpEnum.Pow, true): ExecutePowWithLibDevice(); return;
 
             //case (OpEnum.Abs, false): ExecuteAbs(); return;
             //case (OpEnum.Abs, true): ExecuteAbsWithLibDevice(); return;
@@ -297,7 +301,21 @@ public struct CodeMachine
         x = LibDevice.Sin(x);
         StackPush(x);
     }
-    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private void ExecutePow()
+    {
+        var x = StackPop();
+        var y = StackPop();
+        StackPush(XMath.Pow(y, x));
+    }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private void ExecutePowWithLibDevice()
+    {
+        var x = StackPop();
+        var y = StackPop();
+        StackPush(LibDevice.Pow(y, x));
+    }
+
     //[MethodImpl(MethodImplOptions.AggressiveInlining)]
     //private void ExecuteAbs()
     //{

@@ -22,6 +22,7 @@ public abstract record ByteCode
     public sealed record Sub : ByteCode;
     public sealed record Div : ByteCode;
     public sealed record Mul : ByteCode;
+    public sealed record Pow : ByteCode;
     #endregion binary
 
     #region special

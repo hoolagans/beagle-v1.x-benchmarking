@@ -71,6 +71,9 @@ public abstract record MathExpr
                 case OpEnum.Sin:
                     queue.Enqueue(new ByteCode.Sin());
                     break;
+                case OpEnum.Pow:
+                    queue.Enqueue(new ByteCode.Pow());
+                    break;
                 case OpEnum.Copy:
                     queue.Enqueue(new ByteCode.Copy(command.Idx));
                     break;
@@ -129,35 +132,44 @@ public abstract record MathExpr
 
                 #region binary
                 case ByteCode.Add:
-                    {
-                        var rhs = stack.PopLast(1).First();
-                        var lhs = stack.PopLast(1).First();
-                        stack.Add(new Add(lhs, rhs));
-                    }
-                    break;
+                {
+                    var rhs = stack.PopLast(1).First();
+                    var lhs = stack.PopLast(1).First();
+                    stack.Add(new Add(lhs, rhs));
+                }
+                break;
+
                 case ByteCode.Sub:
-                    {
-                        var rhs = stack.PopLast(1).First();
-                        var lhs = stack.PopLast(1).First();
-                        stack.Add(new Sub(lhs, rhs));
-                    }
-                    break;
+                {
+                    var rhs = stack.PopLast(1).First();
+                    var lhs = stack.PopLast(1).First();
+                    stack.Add(new Sub(lhs, rhs));
+                }
+                break;
 
                 case ByteCode.Div:
-                    {
-                        var rhs = stack.PopLast(1).First();
-                        var lhs = stack.PopLast(1).First();
-                        stack.Add(new Div(lhs, rhs));
-                    }
-                    break;
+                {
+                    var rhs = stack.PopLast(1).First();
+                    var lhs = stack.PopLast(1).First();
+                    stack.Add(new Div(lhs, rhs));
+                }
+                break;
 
                 case ByteCode.Mul:
-                    {
-                        var rhs = stack.PopLast(1).First();
-                        var lhs = stack.PopLast(1).First();
-                        stack.Add(new Mul(lhs, rhs));
-                    }
-                    break;
+                {
+                    var rhs = stack.PopLast(1).First();
+                    var lhs = stack.PopLast(1).First();
+                    stack.Add(new Mul(lhs, rhs));
+                }
+                break;
+                
+                case ByteCode.Pow:
+                {
+                    var rhs = stack.PopLast(1).First();
+                    var lhs = stack.PopLast(1).First();
+                    stack.Add(new Pow(lhs, rhs));
+                } 
+                break;
                 #endregion binary
 
                 case ByteCode.Load(string name):
@@ -176,13 +188,14 @@ public abstract record MathExpr
                     stack.Add(stack.Last());
                     break;
                 case ByteCode.Swap:
-                    {
-                        var temp1 = stack[^1];
-                        var temp2 = stack[^2];
-                        stack[^1] = temp2;
-                        stack[^2] = temp1;
-                    }
-                    break;
+                {
+                    var temp1 = stack[^1];
+                    var temp2 = stack[^2];
+                    stack[^1] = temp2;
+                    stack[^2] = temp1;
+                }
+                break;
+
                 case ByteCode.Del:
                     stack.PopLast(1);
                     break;
@@ -298,6 +311,8 @@ public abstract record MathExpr
                 return $"(\\frac{{{lhs.AsLatexString()}}}{{{rhs.AsLatexString()}}})";
             case Mul(MathExpr lhs, MathExpr rhs):
                 return $"({lhs.AsLatexString()} \\cdot {rhs.AsLatexString()})";
+            case Pow(MathExpr lhs, MathExpr rhs):
+                return $"({lhs.AsLatexString()} ^ {rhs.AsLatexString()})";
             case Variable(string name):
                 return name;
             case Constant(float value):
@@ -348,6 +363,7 @@ public abstract record MathExpr
     public sealed record Sub(MathExpr Lhs, MathExpr Rhs) : BinaryExpr(Lhs, Rhs);
     public sealed record Div(MathExpr Lhs, MathExpr Rhs) : BinaryExpr(Lhs, Rhs);
     public sealed record Mul(MathExpr Lhs, MathExpr Rhs) : BinaryExpr(Lhs, Rhs);
+    public sealed record Pow(MathExpr Lhs, MathExpr Rhs) : BinaryExpr(Lhs, Rhs);
     #endregion binary
 
     #region special

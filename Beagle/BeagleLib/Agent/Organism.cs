@@ -198,6 +198,11 @@ public class Organism
                     commands.Add(new Command(OpEnum.Sin));
                     break;
                 }
+                case "POW":
+                {
+                    commands.Add(new Command(OpEnum.Pow));
+                    break;
+                }
                 case "COPY":
                 {
                     commands.Add(new Command(OpEnum.Copy, (int)idx));

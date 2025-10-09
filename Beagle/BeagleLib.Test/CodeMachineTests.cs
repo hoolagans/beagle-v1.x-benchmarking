@@ -149,6 +149,19 @@ public class CodeMachineTests
         var result = _codeMachine.RunCommands(_inputs, commands);
         ClassicAssert.AreEqual(result, (float)Math.Sin((float)Math.PI / 2));
     }
+    [Test]
+    public void TestPowLoadDup()
+    {
+        var commands = new[]
+        {
+            new Command(OpEnum.Load, 1),
+            new Command(OpEnum.Dup),
+            new Command(OpEnum.Pow)
+        };
+        var result = _codeMachine.RunCommands(_inputs, commands);
+        ClassicAssert.AreEqual(result, 4);
+    }
+
     //[Test] public void TestAbs()
     //{
     //    var commands = new[]
