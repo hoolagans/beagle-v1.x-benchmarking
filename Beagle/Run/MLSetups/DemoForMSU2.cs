@@ -41,6 +41,7 @@ public class DemoForMSU2 : MLSetup
     public override OpEnum[] GetAllowedOperations() => base.GetAllowedOperations().Where(x => x != OpEnum.Sin &&
                                                                                               x != OpEnum.Cbrt &&
                                                                                               x != OpEnum.Cube &&
-                                                                                              x != OpEnum.Ln).ToArray();
+                                                                                              x != OpEnum.Ln &&
+                                                                                              x != OpEnum.Pow).ToArray();
     #endregion
 }
