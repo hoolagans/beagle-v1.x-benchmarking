@@ -8,7 +8,7 @@ public class DemoForMSU4 : MLSetup
     #region Overrides
     public override (float[], float) GetNextInputsAndCorrectOutput(float[] inputs)
     {
-        var o = 1 + Rnd.Random.NextSingle() * 5;
+        var o = 1 + Rnd.Random.NextSingle() * 2;
 
         inputs[0] = o;
 
