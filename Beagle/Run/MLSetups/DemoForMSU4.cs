@@ -8,16 +8,16 @@ public class DemoForMSU4 : MLSetup
     #region Overrides
     public override (float[], float) GetNextInputsAndCorrectOutput(float[] inputs)
     {
-        var t = Rnd.Random.NextSingle() * 5;
+        var o = 1 + Rnd.Random.NextSingle() * 5;
 
-        inputs[0] = t;
+        inputs[0] = o;
 
-        var result = MathF.Pow(MathF.E, -t*t/2)/MathF.Sqrt(2 * MathF.PI);
+        var result = MathF.Pow(MathF.E, -o*o/2)/MathF.Sqrt(2 * MathF.PI);
         return (inputs, result);
     }
     public override string[] GetInputLabels()
     {
-        return ["t"];
+        return ["O"];
     }
 
     public override int TargetColonySize(int generation)
