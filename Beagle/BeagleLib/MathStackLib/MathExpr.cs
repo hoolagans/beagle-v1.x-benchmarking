@@ -312,7 +312,7 @@ public abstract record MathExpr
             case Mul(MathExpr lhs, MathExpr rhs):
                 return $"({lhs.AsLatexString()} \\cdot {rhs.AsLatexString()})";
             case Pow(MathExpr lhs, MathExpr rhs):
-                return $"({{lhs.AsLatexString()}} ^ {{rhs.AsLatexString()}})";
+                return $"({lhs.AsLatexString()}) ^ ({rhs.AsLatexString()}))";
             case Variable(string name):
                 return name;
             case Constant(float value):

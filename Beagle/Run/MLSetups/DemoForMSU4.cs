@@ -1,5 +1,6 @@
 ﻿using BeagleLib.Engine;
 using BeagleLib.Util;
+using BeagleLib.VM;
 
 namespace Run.MLSetups;
 
@@ -28,7 +29,17 @@ public class DemoForMSU4 : MLSetup
 
     public override long TotalBirthsToResetColonyIfNoProgress => 750_000_000;
 
+    public override uint ExperimentsPerGeneration => 1024;
+
     public override double SolutionFoundASRThreshold => 1.0;
     public override bool KeepOptimizingAfterSolutionFound => true;
+
+    //public override OpEnum[] GetAllowedOperations() => base.GetAllowedOperations().Where(x => x != OpEnum.Sin &&
+    //                                                                                          x != OpEnum.Add &&
+    //                                                                                          x != OpEnum.Sub &&
+    //                                                                                          x != OpEnum.Cbrt &&
+    //                                                                                          x != OpEnum.Cube &&
+    //                                                                                          x != OpEnum.Ln).ToArray();
+
     #endregion
 }
