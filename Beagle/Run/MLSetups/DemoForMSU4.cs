@@ -23,7 +23,7 @@ public class DemoForMSU4 : MLSetup
 
     public override int TargetColonySize(int generation)
     {
-        if (generation % 1000 < 50) return 30_000_000;
+        if (generation % 1000 < 50) return 50_000_000;
         return 1_000_000;
     }
 
