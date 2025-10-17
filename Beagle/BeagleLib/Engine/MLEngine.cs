@@ -203,7 +203,7 @@ public class MLEngine<TMLSetup, TFitFunc> : MLEngineCore
                 _currentGeneration++;
                 var done = TrainingLoopBody();
 
-                while (Console.KeyAvailable)
+                while (false)//(Console.KeyAvailable & Environment.UserInteractive)//(Console.KeyAvailable)
                 {
                     if (Console.ReadKey(true).Key == ConsoleKey.Escape)
                     {
